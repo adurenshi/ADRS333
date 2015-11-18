@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tree id="0" parentid="-1" name="">
+    <item id="110000" name="北京市" pid="0">
+        <item id="110100" name="市辖区" pid="110000">
+            <item id="110101" name="东城区" pid="110100"/>
+            <item id="110102" name="西城区" pid="110100"/>
+            <item id="110103" name="崇文区" pid="110100"/>
+            <item id="110104" name="宣武区" pid="110100"/>
+            <item id="110105" name="朝阳区" pid="110100"/>
+            <item id="110106" name="丰台区" pid="110100"/>
+            <item id="110107" name="石景山区" pid="110100"/>
+            <item id="110108" name="海淀区" pid="110100"/>
+            <item id="110109" name="门头沟区" pid="110100"/>
+            <item id="110111" name="房山区" pid="110100"/>
+            <item id="110112" name="通州区" pid="110100"/>
+            <item id="110113" name="顺义区" pid="110100"/>
+            <item id="110114" name="昌平区" pid="110100"/>
+            <item id="110115" name="大兴区" pid="110100"/>
+            <item id="110116" name="怀柔区" pid="110100"/>
+            <item id="110117" name="平谷区" pid="110100"/>
+        </item>
+        <item id="110200" name="县" pid="110000">
+            <item id="110228" name="密云县" pid="110200"/>
+            <item id="110229" name="延庆县" pid="110200"/>
+        </item>
+    </item>
+
+    
+    <item id="440000" name="广东省" pid="0">
+        <item id="440100" name="广州市" pid="440000">
+            <item id="440101" name="市辖区" pid="440100"/>
+            <item id="440103" name="荔湾区" pid="440100"/>
+            <item id="440104" name="越秀区" pid="440100"/>
+            <item id="440105" name="海珠区" pid="440100"/>
+            <item id="440106" name="天河区" pid="440100"/>
+            <item id="440111" name="白云区" pid="440100"/>
+            <item id="440112" name="黄埔区" pid="440100"/>
+            <item id="440113" name="番禺区" pid="440100"/>
+            <item id="440114" name="花都区" pid="440100"/>
+            <item id="440115" name="南沙区" pid="440100"/>
+            <item id="440116" name="萝岗区" pid="440100"/>
+            <item id="440183" name="增城市" pid="440100"/>
+            <item id="440184" name="从化市" pid="440100"/>
+        </item>
+        <item id="440200" name="韶关市" pid="440000">
+            <item id="440201" name="市辖区" pid="440200"/>
+            <item id="440203" name="武江区" pid="440200"/>
+            <item id="440204" name="浈江区" pid="440200"/>
+            <item id="440205" name="曲江区" pid="440200"/>
+            <item id="440222" name="始兴县" pid="440200"/>
+            <item id="440224" name="仁化县" pid="440200"/>
+            <item id="440229" name="翁源县" pid="440200"/>
+            <item id="440232" name="乳源瑶族自治县" pid="440200"/>
+            <item id="440233" name="新丰县" pid="440200"/>
+            <item id="440281" name="乐昌市" pid="440200"/>
+            <item id="440282" name="南雄市" pid="440200"/>
+        </item>
+        <item id="440300" name="深圳市" pid="440000">
+            <item id="440301" name="市辖区" pid="440300"/>
+            <item id="440303" name="罗湖区" pid="440300"/>
+            <item id="440304" name="福田区" pid="440300"/>
+            <item id="440305" name="南山区" pid="440300"/>
+            <item id="440306" name="宝安区" pid="440300"/>
+            <item id="440307" name="龙岗区" pid="440300"/>
+            <item id="440308" name="盐田区" pid="440300"/>
+        </item>
+        <item id="440400" name="珠海市" pid="440000">
+            <item id="440401" name="市辖区" pid="440400"/>
+            <item id="440402" name="香洲区" pid="440400"/>
+            <item id="440403" name="斗门区" pid="440400"/>
+            <item id="440404" name="金湾区" pid="440400"/>
+        </item>
+        <item id="440500" name="汕头市" pid="440000">
+            <item id="440501" name="市辖区" pid="440500"/>
+            <item id="440507" name="龙湖区" pid="440500"/>
+            <item id="440511" name="金平区" pid="440500"/>
+            <item id="440512" name="濠江区" pid="440500"/>
+            <item id="440513" name="潮阳区" pid="440500"/>
+            <item id="440514" name="潮南区" pid="440500"/>
+            <item id="440515" name="澄海区" pid="440500"/>
+            <item id="440523" name="南澳县" pid="440500"/>
+        </item>
+        <item id="440600" name="佛山市" pid="440000">
+            <item id="440601" name="市辖区" pid="440600"/>
+            <item id="440604" name="禅城区" pid="440600"/>
+            <item id="440605" name="南海区" pid="440600"/>
+            <item id="440606" name="顺德区" pid="440600"/>
+            <item id="440607" name="三水区" pid="440600"/>
+            <item id="440608" name="高明区" pid="440600"/>
+        </item>
+        <item id="440700" name="江门市" pid="440000">
+            <item id="440701" name="市辖区" pid="440700"/>
+            <item id="440703" name="蓬江区" pid="440700"/>
+            <item id="440704" name="江海区" pid="440700"/>
+            <item id="440705" name="新会区" pid="440700"/>
+            <item id="440781" name="台山市" pid="440700"/>
+            <item id="440783" name="开平市" pid="440700"/>
+            <item id="440784" name="鹤山市" pid="440700"/>
+            <item id="440785" name="恩平市" pid="440700"/>
+        </item>
+        <item id="440800" name="湛江市" pid="440000">
+            <item id="440801" name="市辖区" pid="440800"/>
+            <item id="440802" name="赤坎区" pid="440800"/>
+            <item id="440803" name="霞山区" pid="440800"/>
+            <item id="440804" name="坡头区" pid="440800"/>
+            <item id="440811" name="麻章区" pid="440800"/>
+            <item id="440823" name="遂溪县" pid="440800"/>
+            <item id="440825" name="徐闻县" pid="440800"/>
+            <item id="440881" name="廉江市" pid="440800"/>
+            <item id="440882" name="雷州市" pid="440800"/>
+            <item id="440883" name="吴川市" pid="440800"/>
+        </item>
+        <item id="440900" name="茂名市" pid="440000">
+            <item id="440901" name="市辖区" pid="440900"/>
+            <item id="440902" name="茂南区" pid="440900"/>
+            <item id="440903" name="茂港区" pid="440900"/>
+            <item id="440923" name="电白县" pid="440900"/>
+            <item id="440981" name="高州市" pid="440900"/>
+            <item id="440982" name="化州市" pid="440900"/>
+            <item id="440983" name="信宜市" pid="440900"/>
+        </item>
+        <item id="441200" name="肇庆市" pid="440000">
+            <item id="441201" name="市辖区" pid="441200"/>
+            <item id="441202" name="端州区" pid="441200"/>
+            <item id="441203" name="鼎湖区" pid="441200"/>
+            <item id="441223" name="广宁县" pid="441200"/>
+            <item id="441224" name="怀集县" pid="441200"/>
+            <item id="441225" name="封开县" pid="441200"/>
+            <item id="441226" name="德庆县" pid="441200"/>
+            <item id="441283" name="高要市" pid="441200"/>
+            <item id="441284" name="四会市" pid="441200"/>
+        </item>
+        <item id="441300" name="惠州市" pid="440000">
+            <item id="441301" name="市辖区" pid="441300"/>
+            <item id="441302" name="惠城区" pid="441300"/>
+            <item id="441303" name="惠阳区" pid="441300"/>
+            <item id="441322" name="博罗县" pid="441300"/>
+            <item id="441323" name="惠东县" pid="441300"/>
+            <item id="441324" name="龙门县" pid="441300"/>
+        </item>
+        <item id="441400" name="梅州市" pid="440000">
+            <item id="441401" name="市辖区" pid="441400"/>
+            <item id="441402" name="梅江区" pid="441400"/>
+            <item id="441421" name="梅县" pid="441400"/>
+            <item id="441422" name="大埔县" pid="441400"/>
+            <item id="441423" name="丰顺县" pid="441400"/>
+            <item id="441424" name="五华县" pid="441400"/>
+            <item id="441426" name="平远县" pid="441400"/>
+            <item id="441427" name="蕉岭县" pid="441400"/>
+            <item id="441481" name="兴宁市" pid="441400"/>
+        </item>
+        <item id="441500" name="汕尾市" pid="440000">
+            <item id="441501" name="市辖区" pid="441500"/>
+            <item id="441502" name="城区" pid="441500"/>
+            <item id="441521" name="海丰县" pid="441500"/>
+            <item id="441523" name="陆河县" pid="441500"/>
+            <item id="441581" name="陆丰市" pid="441500"/>
+        </item>
+        <item id="441600" name="河源市" pid="440000">
+            <item id="441601" name="市辖区" pid="441600"/>
+            <item id="441602" name="源城区" pid="441600"/>
+            <item id="441621" name="紫金县" pid="441600"/>
+            <item id="441622" name="龙川县" pid="441600"/>
+            <item id="441623" name="连平县" pid="441600"/>
+            <item id="441624" name="和平县" pid="441600"/>
+            <item id="441625" name="东源县" pid="441600"/>
+        </item>
+        <item id="441700" name="阳江市" pid="440000">
+            <item id="441701" name="市辖区" pid="441700"/>
+            <item id="441702" name="江城区" pid="441700"/>
+            <item id="441721" name="阳西县" pid="441700"/>
+            <item id="441723" name="阳东县" pid="441700"/>
+            <item id="441781" name="阳春市" pid="441700"/>
+        </item>
+        <item id="441800" name="清远市" pid="440000">
+            <item id="441801" name="市辖区" pid="441800"/>
+            <item id="441802" name="清城区" pid="441800"/>
+            <item id="441821" name="佛冈县" pid="441800"/>
+            <item id="441823" name="阳山县" pid="441800"/>
+            <item id="441825" name="连山壮族瑶族自治县" pid="441800"/>
+            <item id="441826" name="连南瑶族自治县" pid="441800"/>
+            <item id="441827" name="清新县" pid="441800"/>
+            <item id="441881" name="英德市" pid="441800"/>
+            <item id="441882" name="连州市" pid="441800"/>
+        </item>
+        <item id="441900" name="东莞市" pid="440000">
+            <item id="441901" name="东莞市市辖区" pid="441900"/>
+        </item>
+        <item id="442000" name="中山市" pid="440000">
+            <item id="442001" name="中山市市辖区" pid="442000"/>
+        </item>
+        <item id="445100" name="潮州市" pid="440000">
+            <item id="445101" name="市辖区" pid="445100"/>
+            <item id="445102" name="湘桥区" pid="445100"/>
+            <item id="445121" name="潮安县" pid="445100"/>
+            <item id="445122" name="饶平县" pid="445100"/>
+        </item>
+        <item id="445200" name="揭阳市" pid="440000">
+            <item id="445201" name="市辖区" pid="445200"/>
+            <item id="445202" name="榕城区" pid="445200"/>
+            <item id="445221" name="揭东县" pid="445200"/>
+            <item id="445222" name="揭西县" pid="445200"/>
+            <item id="445224" name="惠来县" pid="445200"/>
+            <item id="445281" name="普宁市" pid="445200"/>
+        </item>
+        <item id="445300" name="云浮市" pid="440000">
+            <item id="445301" name="市辖区" pid="445300"/>
+            <item id="445302" name="云城区" pid="445300"/>
+            <item id="445321" name="新兴县" pid="445300"/>
+            <item id="445322" name="郁南县" pid="445300"/>
+            <item id="445323" name="云安县" pid="445300"/>
+            <item id="445381" name="罗定市" pid="445300"/>
+        </item>
+    </item>
+    
+    
+    <item id="460000" name="海南省" pid="0">
+        <item id="460100" name="海口市" pid="460000">
+            <item id="460101" name="市辖区" pid="460100"/>
+            <item id="460105" name="秀英区" pid="460100"/>
+            <item id="460106" name="龙华区" pid="460100"/>
+            <item id="460107" name="琼山区" pid="460100"/>
+            <item id="460108" name="美兰区" pid="460100"/>
+        </item>
+        <item id="460200" name="三亚市" pid="460000">
+            <item id="460201" name="市辖区" pid="460200"/>
+        </item>
+        <item id="469000" name="省直辖县级行政单位" pid="460000">
+            <item id="469001" name="五指山市" pid="469000"/>
+            <item id="469002" name="琼海市" pid="469000"/>
+            <item id="469003" name="儋州市" pid="469000"/>
+            <item id="469005" name="文昌市" pid="469000"/>
+            <item id="469006" name="万宁市" pid="469000"/>
+            <item id="469007" name="东方市" pid="469000"/>
+            <item id="469025" name="定安县" pid="469000"/>
+            <item id="469026" name="屯昌县" pid="469000"/>
+            <item id="469027" name="澄迈县" pid="469000"/>
+            <item id="469028" name="临高县" pid="469000"/>
+            <item id="469030" name="白沙黎族自治县" pid="469000"/>
+            <item id="469031" name="昌江黎族自治县" pid="469000"/>
+            <item id="469033" name="乐东黎族自治县" pid="469000"/>
+            <item id="469034" name="陵水黎族自治县" pid="469000"/>
+            <item id="469035" name="保亭黎族苗族自治县" pid="469000"/>
+            <item id="469036" name="琼中黎族苗族自治县" pid="469000"/>
+            <item id="469037" name="西沙群岛" pid="469000"/>
+            <item id="469038" name="南沙群岛" pid="469000"/>
+            <item id="469039" name="中沙群岛的岛礁及其海域" pid="469000"/>
+        </item>
+    </item>
+    <item id="500000" name="重庆市" pid="0">
+        <item id="500100" name="市辖区" pid="500000">
+            <item id="500101" name="万州区" pid="500100"/>
+            <item id="500102" name="涪陵区" pid="500100"/>
+            <item id="500103" name="渝中区" pid="500100"/>
+            <item id="500104" name="大渡口区" pid="500100"/>
+            <item id="500105" name="江北区" pid="500100"/>
+            <item id="500106" name="沙坪坝区" pid="500100"/>
+            <item id="500107" name="九龙坡区" pid="500100"/>
+            <item id="500108" name="南岸区" pid="500100"/>
+            <item id="500109" name="北碚区" pid="500100"/>
+            <item id="500110" name="万盛区" pid="500100"/>
+            <item id="500111" name="双桥区" pid="500100"/>
+            <item id="500112" name="渝北区" pid="500100"/>
+            <item id="500113" name="巴南区" pid="500100"/>
+            <item id="500114" name="黔江区" pid="500100"/>
+            <item id="500115" name="长寿区" pid="500100"/>
+            <item id="500116" name="江津区" pid="500100"/>
+            <item id="500117" name="合川区" pid="500100"/>
+            <item id="500118" name="永川区" pid="500100"/>
+            <item id="500119" name="南川区" pid="500100"/>
+        </item>
+        <item id="500200" name="县" pid="500000">
+            <item id="500222" name="綦江县" pid="500200"/>
+            <item id="500223" name="潼南县" pid="500200"/>
+            <item id="500224" name="铜梁县" pid="500200"/>
+            <item id="500225" name="大足县" pid="500200"/>
+            <item id="500226" name="荣昌县" pid="500200"/>
+            <item id="500227" name="璧山县" pid="500200"/>
+            <item id="500228" name="梁平县" pid="500200"/>
+            <item id="500229" name="城口县" pid="500200"/>
+            <item id="500230" name="丰都县" pid="500200"/>
+            <item id="500231" name="垫江县" pid="500200"/>
+            <item id="500232" name="武隆县" pid="500200"/>
+            <item id="500233" name="忠县" pid="500200"/>
+            <item id="500234" name="开县" pid="500200"/>
+            <item id="500235" name="云阳县" pid="500200"/>
+            <item id="500236" name="奉节县" pid="500200"/>
+            <item id="500237" name="巫山县" pid="500200"/>
+            <item id="500238" name="巫溪县" pid="500200"/>
+            <item id="500240" name="石柱土家族自治县" pid="500200"/>
+            <item id="500241" name="秀山土家族苗族自治县" pid="500200"/>
+            <item id="500242" name="酉阳土家族苗族自治县" pid="500200"/>
+            <item id="500243" name="彭水苗族土家族自治县" pid="500200"/>
+        </item>
+    </item>
+
+</tree>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="ve.js"></script> 
+	<script>
+	$().ready(function(){
+		cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetChipcardId',cMsgConfigure);
+	});
+	var cVe= new EIO.ve();
+	var cVei = new EIO.vei();
+	var cVeName="VeDemo1";//定义本应用的Ve引擎名称，用户自定义，用作服务按的消息处理调度
+	var cServerUri="EIOServletMsgEngine";//指定servlet的引用名，该名为web.xml中指定的<url-pattern>内容
+	var cMsgConfigure1 ='{"MsgQueryDb":{"MsgGetChipcardId":{"ReqFunc":"reqGetChipcardId","ResFunc":"resGetChipcardId","MsgHandle":"csAsc.ECOSS.reso.demo1.CMsgGetChipcard.GetChipcardId"}}}';   	
+	var cMsgConfigure=eval("("+cMsgConfigure1+")");
+	function reqGetChipcardId()
+	{
+		var sendData = "test";
+		//$("#classify1").empty(); //每次点击每一项时先清空里面的数据
+		//jQuery("#g_tab1").jqGrid('clearGridData');//jqGrid清空表格中数据
+		cVe.setConn(cServerUri,"POST", true, sendData);
+	}
+	
+	function resGetChipcardId()
+	{
+		var retData =cVe.XHR.responseText;
+	    var retDataObj=eval("("+retData+")");
+		
+		for (var j = 0; j < retDataObj["EIOVEDATA"].length; j++){
+			//alert(retDataObj["EIOVEDATA"][j]["id"]);
+			$("#classify1").append(
+					"<option value="
+							+ retDataObj["EIOVEDATA"][j].cnum + ">"
+							+ retDataObj["EIOVEDATA"][j].cnum
+							+ "</option>");
+		}
+		
+		$("#classify1").bind("change",function(){
+			var selectid = $("#classify1 option:selected").text();
+			alert(selectid);
+		});
+	}
+	
+	$(function(){
+		$("#search").click(function(){
+			$("#searchcontent").empty();//每点击一次按钮清空一次内容
+			$("#searchcontent").append("搜索内容如下");
+			
+		});
+	});
+	
+	</script>
+  </head>
+  
+  <body>
+   <select name="classify1" id="classify1" >
+   
+      					</select>
+      <button type="button" id="search" class="btn btn-info btn-xs">查询</button>
+      <div id="searchcontent"></div>
+  </body>
+</html>
