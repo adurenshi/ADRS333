@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ecoss教育卡－卡数据分包</title>
+<link rel="stylesheet" href="css/base.css" />
+<style type="text/css">
+#headtop{
+background: url("images/head2.jpg") no-repeat;
+}
+#main11{
+ height:650px;
+}
+#main1_left{
+ height:640px;
+}
+
+#main11 #main1_right{
+ height:640px;
+}
+</style>
+<script type="text/javascript">
+var pageoption="maketask.html";
+
+
+</script>
+
+<script type="text/javascript" src="js/dtree.js"></script>
+<script type="text/javascript" src="ve.js"></script> 
+<!--插入透明窗口-->
+<link rel="stylesheet" type="text/css" href="css/detailinfostyle.css">
+<!--插入jQuery包-->
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+<!--配置jqGrid-->
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+<link rel="StyleSheet" href="css/dtree.css" type="text/css" />
+<script src="js/jqGrid/grid.locale-cn.js" type="text/javascript"></script>
+<script src="js/jqGrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+<script src="js/EIO-VE-demo2-js.js" type="text/javascript"></script>
+<script src="js/but_operation.js" type="text/javascript"></script>
+ <script src="js/jquery.jqprint-0.3.js"></script> 
+  <script src="js/query-migrate-1.1.0.js"></script> 
+   <script type="text/javascript">
+   window.onload=function(){
+	 cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetDbRecstomakecardno1',cMsgConfigure);
+}
+  </script>
+
+
+ <!-- 用户凭证 -->
+  <script src="js/user.js"></script>
+<script type="text/javascript">
+ $(function() {
+   //获取用户凭证
+    var cLoginPermission =cVeUti.readLoginPermit();
+    var usertype=cLoginPermission["cUserType"];
+    var username=cLoginPermission["cUsername"];
+    //var pagename=getCurrentPageName();
+        //显示当前登陆的用户名
+     $("#user_name").html(cLoginPermission["cUsername"]);
+});
+</script>
+
+
+</head>
+<body>
+<div id="headtop">
+ <table align="center" style="width:100%;height:100%">
+      <tr>
+        <td align="left" style="width:50%;height:80%"></td>
+        <td align="right" style="width:50%;height:80%"><span style="color:red;size:25px">欢迎您:</span><span id="user_name" style="color:red; size: 25px"> | </span>&nbsp;&nbsp;<font color="red"><a href="/EcossWeb/index.html">首页</a> | <a href="#" onclick="quit();">退出</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="user_help"></a></font>
+        </td>
+      </tr>
+    </table>
+
+</div>
+<div id="main11">
+   <div id="main1_left">
+       <div id="subinstitution" style="padding-left: 10px;padding-top: 10px;"></div> 
+          <script type="text/javascript">
+   function posttree(t){
+   treevarvalue=t;
+  //cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetDbRecsToVeGrid0',cMsgConfigure);
+   
+   }
+   var retData= cVeUti.Cookie.getCookie('VeMsgMap');
+   var retDataObj=eval("("+retData+")");	
+	var data=retDataObj[cVe.cEioVeDataId];
+	var root=data["RootInstitution"];
+	var subinstitutions=data["SubInstitution"];
+	Tree = new dTree("subinstitution");
+	var tvx="";
+	Tree.add(root[0],-1,root[2],"javascript:posttree('"+tvx+"')",root[2]);
+	
+	var divID='subinstitution';
+ 	window[divID]= Tree;
+	for (var i=0;i<subinstitutions.length;i++){
+ 		Tree.add(subinstitutions[i][0],subinstitutions[i][1],subinstitutions[i][2],"javascript:posttree('"+subinstitutions[i][2]+"')",subinstitutions[i][3]); 		
+ 	   
+	}	
+ 	document.getElementById(divID).innerHTML = Tree;
+
+   </script>
+       
+    </div>
+  <div id="main1_right">
+     <script language="JavaScript" type="text/javascript"> 
+		function ChangeDiv(divId,divName,zDivCount,obj) 
+		{ 
+		for(i=0;i<=zDivCount;i++) 
+		{ 
+		document.getElementById(divName+i).style.display="none"; 
+		//将所有的层都隐藏 
+		} 
+	
+		document.getElementById(divName+divId).style.display="block"; 
+		if(divId=="1"){
+		document.getElementById("headtab1").className="btn-primary theme-login";
+		document.getElementById("headtab0").className="btn-primary1";
+		document.getElementById("headtab2").className="btn-primary1";
+		document.getElementById("headtab3").className="btn-primary1";
+		}else if(divId=="0"){
+		document.getElementById("headtab0").className="btn-primary theme-login";
+		  document.getElementById("headtab1").className="btn-primary1";
+		  document.getElementById("headtab2").className="btn-primary1";
+		  document.getElementById("headtab3").className="btn-primary1";
+		}else if(divId=="2"){
+		  document.getElementById("headtab2").className="btn-primary theme-login";
+		  document.getElementById("headtab1").className="btn-primary1";
+		  document.getElementById("headtab0").className="btn-primary1";
+		  document.getElementById("headtab3").className="btn-primary1";
+		}else if(divId=="3"){
+		document.getElementById("headtab3").className="btn-primary theme-login";
+		  document.getElementById("headtab1").className="btn-primary1";
+		  document.getElementById("headtab2").className="btn-primary1";
+		  document.getElementById("headtab0").className="btn-primary1";
+		}
+
+		} 
+	</script> 
+		<ul id="talhead">
+		  <li onclick="JavaScript:ChangeDiv('0','JKDiv_',3,this)" class="btn-primary theme-login" id="headtab0">未分配制卡数据</li> 
+		  <li onclick="JavaScript:ChangeDiv('1','JKDiv_',3,this)" class="btn-primary1" id="headtab1">已分配制卡数据</li> 
+		  <li onclick="JavaScript:ChangeDiv('2','JKDiv_',3,this)" class="btn-primary1" id="headtab2">已提交制卡数据</li> 
+		  <li onclick="JavaScript:ChangeDiv('3','JKDiv_',3,this)" class="btn-primary1" id="headtab3">被退回制卡数据</li> 
+		</ul>	
+
+	<div id="JKDiv_0">
+         <div id="JKDiv_one">
+            <FORM id="idForm1" METHOD="post" ACTION="EIOServletMsgEngine" >  <!--  执行提交时转入ACTION所指定的服务端，对servlet，在web.xml中映射该名字 -->
+                <input type="hidden" id="idOption" name="aOption" value="FormSubmit1"/> <!-- 用作操作种类标识符 -->
+			 
+			         卡数量: <input type="text" id="cardnumber" onfocus="blurv()">
+			              
+			       分包原则:<select id="BranchPrinc">
+			                <option selected value="全部">全部</option>
+			                <option value="cardtype">卡类型</option>
+			                <option value="schooltype">学校类型</option>
+			                <option value="sex">性别</option>
+			              </select>  
+			              <script type="text/javascript">
+			               function Validation(){
+			               var vali=/^\d*$/;
+			                 if(vali.test(document.getElementById("cardnumber").value)){
+			                   cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetDbRecstomakecardno1',cMsgConfigure);
+			                 }else{
+			                    //alert("不是数字");
+			                    document.getElementById("valresult").innerHTML="卡数量不是数字，请输入数字!";
+			                 }
+
+			               }
+			               
+			               function blurv(){
+			               document.getElementById("valresult").innerHTML="";
+			               }
+			              
+			              </script>	              
+			      　<input type="button" value="　筛选　" onclick="Validation()"> <span id="valresult" style="color:red"></span>              
+                  <div style="width:100%;height:30px;;text-align:right;"> 
+                  <script>
+                     function showdiv(){
+                        document.getElementById("JKDiv_two").style.display="block";
+                        document.getElementById("JKDiv_one").style.display="none";   
+                        document.getElementById("ospackid").value =document.getElementById("packnameid").value;  
+                         //document.getElementById("ospackid").value =packnamedivshow;              
+                     }
+                  </script>  
+                               选择包号: <select id="packnameid">
+				                <option selected >全部</option>
+                    </select>  
+               <input type="button"  value=" 分　配  "  class="btn"  onclick="showdiv()"/>  
+               <input type="button" id="export" value="导出" onclick="cVei.exportdata('sqltype','1')" class="btn" />
+               <input type="hidden" id="exportsql" value="" size=100 /> <!-- 回传的sql -->               
+               <input type="button"  value=" 打印 " class="btn" onclick='$("#tab4").jqprint();'/>  
+                  </div>  
+            </FORM>
+   
+		    <div id="tab4" style="width:980px">
+		    <table  id="g_tab4"  >
+		    </table>
+		     <div   id="p_tab4"  ></div>
+		    </div>
+
+          </div>
+         <script>
+            function closediv(){
+               document.getElementById("JKDiv_two").style.display="none";
+             document.getElementById("JKDiv_one").style.display="block";
+            }
+         
+         </script>
+         
+         <div id="JKDiv_two" style="display:none;">
+        
+         
+                 <p style="height:40px;font-size:25px;">   您所操作的包号为：<input id="ospackid" name="ospackid" readonly="true" style="border:1px solid #ffffff;color:red;background: F7FBFF"></p>
+                <p style="height:28px;padding-left:200px">
+                <span style="display: inline-block;width:400px">请选择制卡厂商 ： <select id="factorybus" onchange="cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetDbRecstocardfactory',cMsgConfigure); ">
+                <option value='厂商1' selected="selected">厂商1</option><option value='厂商2'>厂商2</option><option value='厂商3'>厂商3</option></select></span>   
+                                              请选择合作银行： <select id="bankname"><option value='工商银行' selected="selected">工商银行</option><option value='建设银行'>建设银行</option><option value='农业银行'>农业银行</option></select> 
+                </p> 
+                 <p style="height:28px;padding-left:200px"><span style="display: inline-block;width:400px">希望完成时间：<input type="date" id="compdate"></span>
+                数据下达方式： <select id="pub_data"><option selected="selected">web services</option><option>软件接口</option><option>文件附件</option></select> </p>  
+             <p style="width:100%; text-align: center; height:60px;margin-top:30px"> 
+           <input type="button" value=" 提　交 " class="btn" onclick="cVe.startReqByMsgMap(cVeName,'MsgQueryDb','MsgGetDbRecstomakecardfenPei',cMsgConfigure);" />
+          <input type="button" value="返　回" onclick="closediv();" class="btn" />
+        </p>
+            
+             <legend style="text-align: center;">　所选厂商情况：    </legend>   
+       <!--         <table border=1 width=100% >
+                  <tr><td>公司名称</td><td colspan="3">厂商1</td></tr>
+                  <tr><td>负责人</td><td>王明</td><td>联系电话</td><td>１２１３１３</td></tr>
+                  <tr><td colspan="4">目前承担的任务</td></tr>
+                  <tr><td>批次号</td><td>卡数量</td><td>卡类型</td><td>完成情况</td></tr>
+                  <tr><td>zk2015012800001</td><td>1000</td><td>白卡</td><td>800</td></tr>
+                  <tr></tr>  
+               </table> -->
+                 <div id="tab4_4" style="width:980px;margin:5px;">
+		    <table  id="g_tab4_4"  >
+		    </table>
+		     <div   id="p_tab4_4"  ></div>
+		    </div>            
+
+         </div>
+			 
+
+
+   </div> 
+  
+		<div id="JKDiv_1" style="display:none;">
+
+		         <!--          包号: <select id="packname2">
+				                <option selected value="全部">全部</option>
+				                <option value="已分配">已分配</option>
+				                <option value="未分配">未分配</option>
+				   </select>
+   
+			         卡商:<select id="cardpr2">
+			                <option selected value="全部">全部</option>			          
+			              </select> 
+			        合作银行:<select id="cardbank2">
+			                <option selected value="全部">全部</option>			          
+			              </select> 
+			   完成日期：<input type="date" id="compldate2" />
+		         <input type="button"  value="　筛选   "/>    --> 
+        <div style="width:100%;height:30px;;text-align:right;"> 
+                   <input type="button" id="export" value="导出" onclick="cVei.exportdata('sqltype','2')" class="btn" />
+               <input type="hidden" id="exportsql2" value="" size=100 /> <!-- 回传的sql -->            
+               <input type="button"  value=" 打印 " class="btn" onclick='$("#tab5").jqprint();'/>  
+                  </div>  
+		        <div id="tab5" style="width:980px;">
+		
+                   <table  id="g_tab5" style="width:980px;">  
+                   
+                   </table>
+                   <div   id="p_tab5"  ></div>
+                 </div>
+           
+			      
+	
+                  <div style="width:100%;height:80px;margin:0px auto; color: #2779AA; font-size:12px;background: #F2F5F7" >
+                     <br />
+                      <p style="width:100%; text-align: center;">  
+                      <input type="button" value="  撤　回   " onclick="testSelectrowsId('#g_tab5','id号','rollback');" class="btn btn-primary">
+                     <input type="button" value=" 提交审核  " onclick="testSelectrowsId('#g_tab5','id号','makecheck');" class="btn btn-primary">
+                     </p>
+                       
+	             </div>
+         </div>
+         
+         <div id="JKDiv_2" style="display:none;">
+			  <FORM id="idForm1" METHOD="post" ACTION="EIOServletMsgEngine" >  <!--  执行提交时转入ACTION所指定的服务端，对servlet，在web.xml中映射该名字 -->
+                <input type="hidden" id="idOption" name="aOption" value="FormSubmit1"/> <!-- 用作操作种类标识符 -->
+		<!-- 	            包号: <select id="packname2">
+				                <option selected value="全部">全部</option>
+				                <option value="已分配">已分配</option>
+				                <option value="未分配">未分配</option>
+				   </select>
+   
+			         卡商:<select id="cardpr2">
+			                <option selected value="全部">全部</option>			          
+			              </select> 
+			        合作银行:<select id="cardbank2">
+			                <option selected value="全部">全部</option>			          
+			              </select> 
+			   完成日期：<input type="date" id="compldate2" />   -->           
+                            
+                <div style="width:100%;height:30px;;text-align:right;">  
+               <input type="button" id="export" value="导出" onclick="cVei.exportdata('sqltype','3')" class="btn" />
+               <input type="hidden" id="exportsql3" value="" size=100 /> <!-- 回传的sql -->          
+               <input type="button"  value=" 打印 " class="btn" onclick='$("#tab6").jqprint();'/>  
+                  </div>          
+            </FORM>
+           
+
+		    <div id="tab6" style="width:980px">
+		    <table  id="g_tab6"  >
+		    </table>
+		     <div   id="p_tab6"  ></div>
+		    </div>
+      </div> 
+       
+       <div id="JKDiv_3" style="display:none;">
+			   <FORM id="idForm1" METHOD="post" ACTION="EIOServletMsgEngine" >  <!--  执行提交时转入ACTION所指定的服务端，对servlet，在web.xml中映射该名字 -->
+                <input type="hidden" id="idOption" name="aOption" value="FormSubmit1"/> <!-- 用作操作种类标识符 -->
+			      <!--             包号: <select id="packname2">
+				                <option selected value="全部">全部</option>
+				                <option value="已分配">已分配</option>
+				                <option value="未分配">未分配</option>
+				   </select>
+   
+			         卡商:<select id="cardpr2">
+			                <option selected value="全部">全部</option>			          
+			              </select> 
+			        合作银行:<select id="cardbank2">
+			                <option selected value="全部">全部</option>			          
+			              </select> 
+			       完成日期：<input type="date" id="compldate2" /> -->
+			                      
+                <div style="width:100%;height:30px;;text-align:right;">                           
+                   <input type="button" id="export" value="导出" onclick="cVei.exportdata('sqltype','4')" class="btn" />
+               <input type="hidden" id="exportsql4" value="" size=100 /> <!-- 回传的sql -->   
+              <input type="button"  value=" 打印  " class="btn" onclick='$("#tab7ss").jqprint();'/>  
+              </div>                   
+            </FORM>
+
+		    <div id="tab7" style="width:980px">
+		    <table  id="g_tab7"  >
+		    </table>
+		     <div   id="p_tab7"  ></div>
+		    </div>
+		     <div style="width:100%;height:80px;margin:0px auto; color: #2779AA; font-size:12px;background: #F2F5F7" >
+                  <br />
+                  <p style="width:100%; text-align: center;">   <input type="button" value="  重新分配   "  onclick="testSelectrowsId('#g_tab7','id号','resetfeipei');" class="btn btn-primary"></p>
+	            </div>
+      </div> 
+         
+         
+    </div>
+</div>
+<div id="bottom" style="background:url(images/bottom.jpg)">
+     Copyright 2014  华南理工大学华系研究所       技术支持与承建：华南理工大学华系研究所  
+</div>
+
+ 
+ 
+</body>
+</html>

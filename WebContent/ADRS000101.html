@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>EIO-MSRouter测试</title>
+
+<script type="text/javascript" src="ve.js"></script> 
+<!--插入jQuery包-->
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+<!--配置jqGrid-->
+<link rel="stylesheet" type="text/css" media="screen" href="css/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+
+<script src="js/jqGrid/grid.locale-cn.js" type="text/javascript"></script>
+<script src="js/jqGrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+<script src="js/EIO-VE-demo1-js.js" type="text/javascript"></script>
+<script>
+var cMsgConfigure = cVeUti.getMsgMapByCookie();
+</script>
+
+</head>
+<body onload="cVe.startReqByMsgHandle(cVeName, 'MsgInit','MsgInitMsgMap','reqSysInit', 'resSysInit', 'csAsc.EIO.SysMsgHandle.CMsgInit.handleMsg');">
+ 
+ 
+<div style="color:#CC0099" font-weight:"bold"  font-family::"Times New Roman",Georgia,Serif>
+ <input type="hidden" id="idOption" name="aOption" value="FormSubmit1"/> <!-- 用作操作种类标识符 -->
+ <hr>  <hr>
+   用户名： <INPUT id="idName" TYPE="text" NAME="aName" >
+ <hr>
+ 
+   年龄： <INPUT id="idAge" TYPE="text" NAME="aAge" >
+ <hr>
+ 
+ <div id="idRadio1" >
+     性别：   男：<INPUT id="idGender11" TYPE="radio" NAME="aGender" value="男">
+                    女：<INPUT id="idGender12" TYPE="radio" NAME="aGender" value="女">
+ </div>
+ <hr>
+ 
+ 
+ <div id="idCheck1" >
+   喜欢的颜色：红：<INPUT TYPE="checkbox" NAME="aColor" value="红">
+                       绿：<INPUT TYPE="checkbox" NAME="aColor" value="绿">
+                     蓝：<INPUT TYPE="checkbox" NAME="aColor" value="蓝">
+ </div>
+ <hr>
+
+ <div id="idSelect1" >
+   来自的国家：
+  <SELECT id="idSelCountry" NAME="aCountry">
+    <option value="中国">中国</option>
+    <option value="美国">美国</option>
+    <option value="俄罗斯">俄罗斯</option>
+  </SELECT>
+  </div>
+  <hr><hr>
+   
+ </div>  
+  <INPUT TYPE="submit" value="提交" >
+  
+
+ <hr><hr>
+  <INPUT TYPE="button" value='改变"来自的国家测试"的内容' onclick="cVei.injectSelect('idSelCountry',cSelData)">
+  <INPUT TYPE="button" value='读取复选卡的值' onclick="cVei.extractCheckbox('idCheck1')">
+  <hr>
+  
+  <input type="button"  value="只发送页面上JS变量到服务端"  onclick="cVe.startReqByMsgMap(cVeName, 'MsgSendFormData','MsgCheckFormData',cMsgConfigure)"/>
+  <input type="button"  value="打开一个服务端生成的新窗口"  onclick="cVe.startReqByMsgMap(cVeName, 'MsgGetNewPage','MsgOpenNewWindow',cMsgConfigure)"/>
+  <input type="button"  value="切换到一个服务端生成的新页面"  onclick="cVe.startReqByMsgMap(cVeName, 'MsgGetNewPage','MsgSwitchPage',cMsgConfigure)"/>
+  <input type="button"  value="查询数据库数据"  onclick="cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetDbRecs',cMsgConfigure)"/>
+   <hr>
+  <input type="button"  value="切换到存放在后台的新网页文件"  onclick="cVe.startReqByMsgMap(cVeName, 'MsgGetNewPage','MsgOpenNewPageFile',cMsgConfigure)"/>
+  <input type="button"  value="调用veGrid显示数据库数据"  onclick="cVe.startReqByMsgMap(cVeName, 'MsgQueryDb','MsgGetDbRecsToVeGrid',cMsgConfigure)"/>
+    <input type="button"  value="返回上一页"  onclick="cVeUti.gotoLocalMsgHandle('BackPage', '-1')"/>
+  <hr>
+ <div id="serverReturn">
+    ajax的返回内容
+ </div>
+<hr><hr>
+</body>
+</html>

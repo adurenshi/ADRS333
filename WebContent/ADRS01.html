@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <title>制卡数据分包系统</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <!--插入jQuery包-->
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="ve.js"></script> 
+  <!--树-->
+  <script type="text/javascript" src="js/dtree.js"></script>
+  <script type="text/javascript" src="js/user.js"></script>
+  <script type="text/javascript" src="js/sidetree.js"></script>
+  <script type="text/javascript">
+   function gotoLocalMsgHandle(msgName, msgData)
+   {
+	switch (msgName)
+    {
+	 case "OpenNewPage": 
+      window.location.href=msgData; //成功，IE支持，Chrome支持
+      //window.navigate("in_new.html"); //路径相对于工程下的WebContent目录, IE支持，Chrome不支持
+      //self.location("in_new.html"); //, IE支持，Chrome不支持
+   	 break;
+   	  case "Openmaketask": 
+      window.location.href=msgData; 
+   	 
+   	 
+   	  break;
+    }//switch
+   }
+  </script> 
+    <script type="text/javascript">
+ $(function() {
+   //获取用户凭证
+    var cLoginPermission =cVeUti.readLoginPermit();
+    var usertype=cLoginPermission["cUserType"];
+    var username=cLoginPermission["cUsername"];
+    var pagename=getCurrentPageName();
+        //显示当前登陆的用户名
+     $("#user_name").html(cLoginPermission["cUsername"]);
+});
+</script>
+  </head>
+  <body background="images/bg.jpg" onload="cVe.startReqByMsgHandle(cVeName, 'MsgInit','MsgInitMsgMap','reqSysInit', 'resSysInit', 'csAsc.EIO.SysMsgHandle.CMsgInit.handleMsg'); ">
+	  <center>     
+        <div class="logo-pic">
+        <img src="images/main1.jpg" alt="">
+	    </div>
+	    <div style="background-image: url(images/u4.png); background-repeat: no-repeat; background-attachment: scroll; background-position: center center;height:30px;width:1000px;">
+	       <table align="center" style="width:100%;height:100%;border:1px solid #ececec">
+      <tr>
+        <td align="left" style="width:50%;height:80%"><span style="color:red;size:25px">欢迎您:</span><span id="user_name" style="color:red; size: 25px"> | </span>&nbsp;&nbsp;<font color="red"></td>
+        <td align="right" style="width:50%;height:80%"><a href="/EcossWeb/index.html">首页</a> | <a href="#" onclick="quit();">退出</a> &nbsp;&nbsp;<a href="javascript:void(0);" id="user_help"></a></font>
+        </td>
+      </tr>
+    </table>
+	    
+	    </div>
+        <div style="background-image: url(images/u0.png); background-repeat: no-repeat; background-attachment: scroll; background-position: center center;height:600px;width:1000px;">
+        <table>
+             <tr>
+              <td>
+                <div id="data_luru" style="cursor:pointer">
+                 <img src="images/in_1.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'" onclick="gotoLocalMsgHandle('OpenNewPage', 'accemaketask.html')" >
+                </div>
+              </td>
+               <td>
+                <div id="data_luru" style="cursor:pointer">
+                 <img src="images/in_2.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'" onclick="gotoLocalMsgHandle('OpenNewPage', 'reportmakestate.html')" >
+                </div>
+              </td>
+              <td>
+                <div id="data_shenpi" style="cursor:pointer">
+                 <img src="images/in_3.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'" >
+                </div>
+              </td>
+              <tr>
+              </table>
+              <table>
+              <tr>
+              <td>
+                <div id="data_daoru" style="cursor:pointer">
+                 <img src="images/in_4.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'" onclick="gotoLocalMsgHandle('Openmaketask', 'accecarddata.html')">
+                </div>
+              </td>
+                <td>
+                <div id="data_daoru" style="cursor:pointer">
+                 <img src="images/in_5.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'" onclick="gotoLocalMsgHandle('Openmaketask', 'reportgoback.html')">
+                </div>
+              </td>
+              <td>
+                <div id="data_chakan"  style="cursor:pointer">
+                 <img src="images/in_6.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'" >
+                </div>
+              </td>
+              <td>
+                <div id="data_tongji"  style="cursor:pointer">
+                 <img src="images/in_7.jpg" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'">
+                </div>
+              </td>
+            </tr>
+          </table>
+          </div>
+        </center>
+  </body>
+</html>

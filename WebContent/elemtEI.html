@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+	function injectElement(id, data)
+	{
+		var obj = document.getElementById(id);
+		if (typeof obj == 'undefined')
+		{
+			//id不存在
+			return;
+		}
+		//文本框
+		if (obj.type == 'text')
+		{
+			obj.value = data;
+		} 
+		else if (obj.getElementsByTagName('input').length > 0)
+		{
+			var inputs = obj.getElementsByTagName('input');
+			var type = inputs[0].type;
+			//checkbox与radio的情况
+			if (type == 'checkbox' || type == 'radio')
+			{
+				//checkbox比较特殊，是从页面已存在中的value里注入？
+				var values ={};
+				for (var i = 0; i < inputs.length; i++)
+				{
+					var input = inputs[i];
+					values[input.value] = i;
+				}
+				if (type == 'checkbox')
+				{
+					for (var i = 0; i < data.length; i++)
+					{
+						if (typeof (values[data[i]]) != "undefined")
+						{
+							inputs[values[data[i]]].checked = true;
+						}
+					}
+				} 
+				else if (type == 'radio')
+				{
+					if (typeof (values[data]) != "undefined")
+					{
+						inputs[values[data]].checked = true;
+					}
+				}
+			}
+
+		}
+		//select
+		else if (obj.type == 'select-one' || obj.type == 'select-multiple')
+		{
+			//默认注入的是数组
+			var str1 = "";
+			for (var i = 0; i < data.length; i++)
+			{
+				str1 += '<option value=' + '"' + data[i] + '">' + data[i]
+						+ '</option > ';
+			}
+			obj.innerHTML = str1;
+		}
+	}
+	window.onload = function()
+	{
+		//初始化的注入对象
+		var inputObj =
+		{
+			cName : '张三',
+			cHobby : [ '体育', '阅读', '音乐' ],
+			cHobby1 : '阅读',
+			cRank : [ '教授', '副教授', '讲师' ],
+			cRank1 : [ '教授', '副教授', '讲师' ],
+		};
+		for (str in inputObj)
+		{
+			injectElement(str, inputObj[str])
+		}
+	}
+</script>
+</head>
+
+<body>
+	<input type="text" id="cName" />
+	<div id='cHobby'>
+	<input type="checkbox" name="cHobby" value="体育">体育
+	<input type="checkbox" name="cHobby" value="阅读">阅读
+	<input type="checkbox" name="cHobby" value="科技">科技
+	<input type="checkbox" name="cHobby" value="医学">医学
+	<input type="checkbox" name="cHobby" value="历史">历史
+	<input type="checkbox" name="cHobby" value="音乐">音乐
+	<input type="checkbox" name="cHobby" value="佛教">佛教
+</div>
+<div id="cHobby1">
+	<input type="radio" name="cHobby1" value="体育">体育
+	<input type="radio" name="cHobby1" value="阅读">阅读
+	<input type="radio" name="cHobby1" value="科技">科技
+	<input type="radio" name="cHobby1" value="医学">医学
+	<input type="radio" name="cHobby1" value="历史">历史
+	<input type="radio" name="cHobby1" value="音乐">音乐
+	<input type="radio" name="cHobby1" value="佛教">佛教
+</div>
+<!-- 用于模拟多选select -->
+	<select id="cRank" multiple></select>
+	<select id="cRank1"></select>
+	<hr>
+	<input type="button"  value="返回上一页"  onclick="window.history.back(-1);"/>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据上报系统</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+
+ <script type="text/javascript">
+   function gotoLocalMsgHandle(msgName, msgData)
+   {
+	switch (msgName)
+    {
+	 case "OpenNewPage": 
+      window.location.href=msgData; //成功，IE支持，Chrome支持
+      //window.navigate("in_new.html"); //路径相对于工程下的WebContent目录, IE支持，Chrome不支持
+      //self.location("in_new.html"); //, IE支持，Chrome不支持
+   	  break;
+    }//switch
+   }
+  </script> 
+
+  </head>
+  <body background="images/bg.jpg" style="margin: 0px;padding: 0px">
+	  <center>     
+        <div style="height:160px">
+        <img src="images/logo.jpg" alt="">
+	    </div>
+	    <div style="background-image:url(images/u4.png);height:28px;width:1000px">
+	    <table align="center" style="width:1000px;height:28px">
+		    <tr>
+		    <td align="left" style="width:150px">你好，XXX操作员！</td>
+		    <td align="left"><input type="text" name="search">&nbsp;<input type="button" value="搜索" onclick=""></td>
+		    <td align="right"><font color="red"><a href="#">首页</a> | <a href="#">退出</a> | <a href="#">帮助</a></font></td>
+		    </tr>
+		</table>
+	    </div>
+	    <div style="height:550px;width:1000px;margin-top:1px;">
+		<div style="float: left;height:535px;width:225px;background:#DBE4FB;padding-top:30px;">
+		<form method="post" action="">	
+		<table>
+			<tr  align="left">
+			<td>账&nbsp;&nbsp;号：<input id="idUsername" type="text" name="username" style="width:120px"></td>
+			</tr>
+			<tr  align="left">
+			<td>密&nbsp;&nbsp;码：<input id="idPassword" type="text" name="password" style="width:120px"></td>
+			<td>校验&nbsp;码：<input id="idCheckCode" type="text" name="checkcode" style="width:120px"></td>
+			</tr>
+			<tr  align="left">
+			<td>校验码：<img src="" id="idPassword"  width="75" height="25" border="1" alt="">&nbsp;&nbsp;<font color="red"><a href="#">换一个</a></font></td>
+			</tr>
+			<tr align="center">
+			<td><input type="button" value="登录" onload="cVe.startReqByMsgHandle(cVeName, 'MsgInit','MsgInitMsgMap','reqLogin', 'resLogin', 'csAsc.EIO.SysMsgHandle.CMsgLogin.handleMsg'); ">&nbsp;&nbsp;<input type="submit" value="注册"></td>
+			</tr>
+		</table>
+		</form>
+		</div>
+        <div style="float:right;background-image: url(images/u0.png); background-repeat: no-repeat; background-attachment: scroll; background-position: center center;height:550px;width:774px;padding-top:15px">
+        <table>
+             <tr>
+              <td>
+                <div id="data_luru" style="cursor:pointer">
+                 <img src="images/sjlr.png" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'"  onclick="gotoLocalMsgHandle('OpenNewPage', 'ADRS0001.html')">
+                </div>
+              </td>
+              <td>
+                <div id="data_shenpi" style="cursor:pointer">
+                 <img src="images/sjsp.png" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'">
+                </div>
+              </td>
+              <tr>
+              </table>
+              <table>
+              <tr>
+              <td>
+                <div id="data_daoru" style="cursor:pointer">
+                 <img src="images/sjdr.png" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'">
+                </div>
+              </td>
+              <td>
+                <div id="data_chakan"  style="cursor:pointer">
+                 <img src="images/sjck.png" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'">
+                </div>
+              </td>
+              <td>
+                <div id="data_tongji"  style="cursor:pointer">
+                 <img src="images/sjtj.png" alt="" onmouseover="this.style.border='3px solid black'"onmouseout="this.style.border='none'">
+                </div>
+              </td>
+            </tr>
+          </table>
+          </div>
+        </div>
+        </center>
+  </body>
+</html>
